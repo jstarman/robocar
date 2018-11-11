@@ -32,3 +32,4 @@ https://github.com/pkese/raspberry-fsharp
 https://blogs.msdn.microsoft.com/david/2017/07/20/setting_up_raspian_and_dotnet_core_2_0_on_a_raspberry_pi/
 https://www.youtube.com/watch?v=WBlXvGwkZa8
 https://github.com/pkese/raspberry-fsharp
+http://www.circuitbasics.com/how-to-connect-to-a-raspberry-pi-directly-with-an-ethernet-cable/
