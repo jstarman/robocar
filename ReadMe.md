@@ -14,17 +14,21 @@ More detail here: https://blogs.msdn.microsoft.com/david/2017/07/20/setting_up_r
 - Control Panel/Network Connections Ethernet properties -> Sharing -> Allow other network users to connect through this computer’s Internet connection. When Docker installed look for default adapter.
 - `ping raspberrypi.mshome.net` to find IP.
 - If this doesn't work install an ip scanner https://www.advanced-ip-scanner.com/ Most likely in `192.168.137.0-255` range
+- If this still doesn't work disable and reenable network adapters and sharing.
 - Install Putty use either hostname or found IP, port 22, SSH.
     - Default username pi
     - Default password raspberry
 - Watch https://www.youtube.com/watch?v=WBlXvGwkZa8 from 5:38 for more first time setup instructions.
-
-**Stopped here with network issues**
+- Once VNC viewer is setup up remote in and turn on/setup wifi
+- Find Ip assigned to raspberry `hostname -I`
+- Turn off remote session and disconnect. You can now connect through wifi connection via VNC viewer or putty.
 
 ## .Net Core Setup
 - https://github.com/pkese/raspberry-fsharp
 - Install .net core prerequisites
+- Had to go hunt down lastest version of .net core ARM32 runtime. Substitute instructions above.
 
+**Send code to Pi via ssh**
 
 ## Sources
 
