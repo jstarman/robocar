@@ -1,5 +1,5 @@
 ECHO OFF
-rem dotnet tool install fake-cli --tool-path .
+dotnet tool install fake-cli --tool-path .
 
 fake run build.fsx
 
