@@ -8,12 +8,12 @@ open Microsoft.AspNetCore.Mvc
 
 [<Route("car/[controller]")>]
 [<ApiController>]
-type CamaraController () =
+type CameraController () =
     inherit ControllerBase()
 
     [<HttpGet>]
     member this.Get() =
-        let value = "Current Camara Settings"
+        let value = "Current Camera Settings"
         ActionResult<string>(value)
 
     [<HttpGet("up")>]
