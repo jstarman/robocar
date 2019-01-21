@@ -25,10 +25,17 @@ Target.create "Default" (fun _ ->
     Trace.trace "Please specify an explicit task"
 )
 
+Target.create "PublishToPi"(fun _ ->
+    Trace.trace "Running publish to pi"
+)
+
+
 open Fake.Core.TargetOperators
 
 "Clean"
     ==>"Build"
     ==> "Default"
 
-Target.runOrDefault "Default"
+"PublishToPi"
+
+Target.runOrDefaultWithArguments "Default"

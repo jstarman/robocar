@@ -38,7 +38,19 @@ More detail here: https://blogs.msdn.microsoft.com/david/2017/07/20/setting_up_r
 - Move public key to pi host
 - Then `PS [app root]> ssh raspberry`
 
-** Next: setup automated build via ssh **
+## Bootstrap app
+`PS[app root]\build> .\bootstrap.cmd`
+
+## Run specific build targets
+Run local clean and build 
+
+`PS[app root]\build>  .\fake build`
+
+Run specific target like publish to pi
+
+`PS[app root]\build>  .\fake build -t PublishToPi`
+
+** Next: ssh without password and setup automated build via ssh **
 
 ## Sources
 
