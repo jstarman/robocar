@@ -1,0 +1,13 @@
+[Unit]
+Description=RoboCar
+After=haproxy.service
+ 
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/robot
+ExecStart=/home/pi/robot/RoboCar
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target

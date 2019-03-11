@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Controllers/CheckController.fs" />
     <Compile Include="Controllers/CameraController.fs" />
     <Compile Include="Controllers/MotorController.fs" />
     <Compile Include="Controllers/SteeringController.fs" />

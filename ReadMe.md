@@ -55,14 +55,51 @@ Run specific target like publish to pi
 `PS[app root]\build>  .\fake build -t PublishToPi`
 
 ## Run
-`./robocar > ./RoboCar`
+Local
+
+`./robocar > dotnet run`
+
+On Rpi
+
+`pi@raspberrypi:~/robot $ ./RoboCar`
+
+Test 
+
+`pi@raspberrypi:~ $ curl localhost:5000`
+
 
 ## Troubleshooting 
 - Find used ports `sudo netstat -ltp`
 - Kill process using port `kill [PID]`
 
-** Next: Expose site externally **
-https://www.thomaslevesque.com/2018/04/17/hosting-an-asp-net-core-2-application-on-a-raspberry-pi/
+## Reverse Proxy Setup
+To run app on default ports 80/443
+
+`pi@raspberrypi ~ $ sudo apt install haproxy`
+
+Edit Rpi config `/etc/haproxy/haproxy.cfg`
+Sample config `.\misc\haproxy.cfg`
+
+Restart service `sudo service haproxy restart`
+
+Logs for troubleshooting at `var/log/haproxy.log`
+
+`pi@raspberrypi:/var/log $ sudo nano haproxy.log`
+
+Find Robocar site at: 
+http://192.168.0.20
+http://192.168.0.20/car/camera
+
+## Setup RoboCar As Service
+Run .net core as service for automatic startup.
+
+Rpi config at `/lib/systemd/system/robocar.system`
+
+Sample config at `.\misc\robocar.system`
+
+** Next: Stop service prior to rebuild **
+** Next: Create Petite rebuild to cut down build to RPI time **
+** Next: Research streaming mjpeg through site **
 
 ## Sources 
 
@@ -71,3 +108,5 @@ https://blogs.msdn.microsoft.com/david/2017/07/20/setting_up_raspian_and_dotnet_
 https://www.youtube.com/watch?v=WBlXvGwkZa8
 https://github.com/pkese/raspberry-fsharp
 http://www.circuitbasics.com/how-to-connect-to-a-raspberry-pi-directly-with-an-ethernet-cable/
+http://www.gregtrowbridge.com/setting-up-a-multiple-raspberry-pi-web-server-part-5/
+https://www.thomaslevesque.com/2018/04/17/hosting-an-asp-net-core-2-application-on-a-raspberry-pi/
